@@ -7,7 +7,6 @@
     <style>
         /* --- CSS STYLES --- */
         
-        /* 1. General Setup */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -17,26 +16,23 @@
             background-color: #fff;
         }
 
-        /* 2. Layout & Containers */
         .container {
             width: 85%;
             max-width: 1200px;
             margin: auto;
-            /* CRITICAL: Do NOT add display:flex here. */
         }
 
-        /* 3. Navigation Bar */
+        /* NAVIGATION */
         header {
-            background-color: #0d2c4d; /* Dark Navy Blue */
+            background-color: #0d2c4d; /* Navy Blue */
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
-        /* Header specific layout to keep logo and nav side-by-side */
         header .container {
             display: flex;
             justify-content: space-between;
@@ -65,26 +61,40 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #fca311; /* Engineering Orange */
+            color: #fca311; /* Orange */
         }
 
-        /* 4. Sections General */
+        /* SECTIONS */
         .section {
             padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 2.2rem;
             color: #0d2c4d;
         }
 
-        /* 5. Services Grid (Fixed Alignment) */
+        /* TOP ABOUT SECTION (YOURS) */
+        /* Making this one stand out as the 'Intro' */
+        #about {
+            background-color: #f4f4f4; /* Light Grey Background */
+            border-bottom: 4px solid #fca311; /* Orange accent line */
+            text-align: center;
+        }
+        
+        .lead-text {
+            font-size: 1.25rem; /* Slightly larger text */
+            max-width: 800px;
+            margin: auto;
+            color: #0d2c4d;
+        }
+
+        /* SERVICES GRID */
         .services-grid {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +107,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 30px;
-            width: 300px; /* Fixed width for consistency */
+            width: 300px;
             flex-grow: 1;
             max-width: 350px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -105,13 +115,12 @@
 
         .service-card h3 {
             color: #0d2c4d;
-            margin-top: 0;
             border-bottom: 2px solid #fca311;
-            padding-bottom: 10px;
             display: inline-block;
+            padding-bottom: 5px;
         }
 
-        /* 6. Contact Section (RESTORED) */
+        /* CONTACT SECTION */
         #contact {
             background-color: #0d2c4d;
             color: white;
@@ -119,19 +128,16 @@
         }
         
         #contact .section-title {
-            color: white; /* Override title color for dark background */
+            color: white;
         }
 
-        /* 7. Footer */
         footer {
             background-color: #081b2f;
             color: white;
             text-align: center;
             padding: 20px 0;
-            font-size: 0.9rem;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             header .container { flex-direction: column; }
             nav ul { margin-top: 15px; }
@@ -141,49 +147,49 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">Oglla</div>
             <nav>
                 <ul>
+                    <!-- LINK FIX: This now points to YOUR About section -->
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- About Section (Intro) -->
-    <section id="about" class="section" style="background-color: #f9f9f9; text-align: center;">
+    <!-- 1. YOUR ABOUT SECTION (Santa Cruz) -->
+    <!-- This is now the very first section -->
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <p style="max-width: 700px; margin: auto; font-size: 1.1rem;">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="lead-text">
                 We are a team of engineers, programmers, and physicists based in Santa Cruz, CA. Since 2021, Oglla LLC has delivered solutions to diverse challenges across these fields.
             </p>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- 2. SERVICES SECTION -->
     <section id="services" class="section">
         <div class="container">
             <h2 class="section-title">Our Capabilities</h2>
             <div class="services-grid">
                 
-                <!-- Service 1 -->
                 <div class="service-card">
                     <h3>Electrical Systems</h3>
                     <p>Custom PCB design, mixed-signal circuit analysis, and power distribution planning.</p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="service-card">
                     <h3>Software Engineering</h3>
                     <p>From low-level embedded firmware to high-level process automation, we build robust software that interfaces seamlessly with your project.</p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-card">
                     <h3>Materials Physics</h3>
                     <p>Advanced material characterization, semiconductor analysis, and general physics-based modeling.</p>
@@ -193,17 +199,18 @@
         </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section id="value" class="section" style="background-color: #f9f9f9; text-align: center;">
+    <!-- 3. WHY CHOOSE US (Old content, moved down) -->
+    <!-- ID renamed to 'why-us' to prevent conflicts -->
+    <section id="why-us" class="section" style="background-color: #fff;">
         <div class="container">
             <h2 class="section-title">Why Choose Us?</h2>
-            <p style="max-width: 700px; margin: auto;">
+            <p style="text-align: center; max-width: 700px; margin: auto;">
                 Our experienced team provides boutique solutions to challenging problems. Between us, we have decades of experience in engineering, physics, and software design. We bridge the gap between theoretical design and practical application.
             </p>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 4. CONTACT SECTION -->
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
@@ -218,5 +225,7 @@
         <p>&copy; 2025 Oglla LLC. All rights reserved.</p>
     </footer>
 
+</body>
+</html>
 </body>
 </html>

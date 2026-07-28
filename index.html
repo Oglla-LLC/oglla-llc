@@ -96,6 +96,36 @@
             color: #0d2c4d;
         }
 
+        /* new: */
+        .photo-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .photo-row img {
+            width: 100%;
+            max-width: 500px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .photo-row img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        /* end new: */
+
+
+
+        
+
         /* SERVICES GRID */
         .services-grid {
             display: flex;
@@ -174,6 +204,7 @@
                 We are a team of engineers, programmers, and physicists based in Santa Cruz, CA. Since 2021, Oglla LLC has delivered solutions to diverse challenges across these fields.
             </p>
         </div>
+
     </section>
 
     <!-- 2. SERVICES SECTION -->
